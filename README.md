@@ -1,16 +1,15 @@
 # Angular Social Login
 
-Esempio di implementazione di login tramite provider esterni Auth2, con controllo dell'access-Token e generazione di un token JWT per le autorizzazioni dell'applicazione.
+Example of login implementation through Auth2 external providers, with access-Token control and generation of a JWT token for application permissions.
 
-Il progetto si divide in 2 sezioni:
- - Client: 
- - Server: 
-
-
+The project is divided into 2 sections:
+ - Client:
+ - Server:
+ 
 ## Client
 
-Applicazione Angular (Ver. 11) in cui viene eseguito il login dei vari social (per ora i provider gestiti sono Google e Microsoft) tramite [**angularx-social-login**](https://github.com/abacritt/angularx-social-login#readme) per recuperare l'access-token; recupero del token JWT nel WebService.
+Angular application (Ver. 11) in which the various social networks are logged in (for now the managed providers are Google and Microsoft) via [** angularx-social-login **] (https://github.com/abacritt/ angularx-social-login # readme) to retrieve the access-token; retrieving the JWT token in the WebService.
 
 ## Server
 
-WebService di autorizzazione sviluppato con NodeJs ed [**ExpressJs**](https://expressjs.com/) con una funzione di login che controlla l'access-token con il giusto provider e, se corretto, genera un token JWT per il client per la gestione delle autorizzazioni;
+Authorization WebService developed with NodeJs and [** ExpressJs **] (https://expressjs.com/) with a login function that checks the access-token with the right provider and, if correct, generates a JWT token for the client for managing permissions;
