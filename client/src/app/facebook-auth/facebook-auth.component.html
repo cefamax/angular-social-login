@@ -1,0 +1,21 @@
+<div class="card" *ngIf="!user || user.provider =='FACEBOOK'">
+  <img
+    src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/51/Facebook_f_logo_%282019%29.svg/1200px-Facebook_f_logo_%282019%29.svg.png"
+    class="card-img-top" alt="Google">
+  <div class="card-body">
+    <h5 class="card-title">Facebook Login</h5>
+    <a href="#" class="btn btn-primary" *ngIf="!user" (click)="signIn()">Sign In</a>
+    <a href="#" class="btn btn-primary" *ngIf="user" (click)="signOut()">Sign Out</a>
+
+    <div *ngIf="loggedIn">
+      <img src="{{ user?.photoUrl }}">
+      <div>
+        <h4>{{ user?.name }}</h4>
+        <p>{{ user?.email }}</p>
+        <p>{{ user?.id }}</p>
+      </div>
+    </div>
+    <div>User Data: {{user|json}}</div>
+
+  </div>
+</div>

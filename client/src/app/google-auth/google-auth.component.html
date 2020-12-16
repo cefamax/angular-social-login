@@ -1,0 +1,21 @@
+<div class="card" *ngIf="!user || user.provider =='GOOGLE'">
+  <img
+    src="https://www.google.com/url?sa=i&url=https%3A%2F%2Fencrypted-tbn0.gstatic.com%2Fimages%3Fq%3Dtbn%3AANd9GcQjzC2JyZDZ_RaWf0qp11K0lcvB6b6kYNMoqtZAQ9hiPZ4cTIOB&psig=AOvVaw2kCEIHfFC1XAE3EJp-Xsu1&ust=1608042502302000&source=images&cd=vfe&ved=0CAIQjRxqFwoTCOCJ_KLXze0CFQAAAAAdAAAAABAD"
+    class="card-img-top" alt="Google">
+  <div class="card-body">
+    <h5 class="card-title">Google Login</h5>
+    <a href="#" class="btn btn-primary" *ngIf="!user" (click)="signIn()">Sign In</a>
+    <a href="#" class="btn btn-primary" *ngIf="user" (click)="signOut()">Sign Out</a>
+
+    <div *ngIf="loggedIn">
+      <img src="{{ user?.photoUrl }}">
+      <div>
+        <h4>{{ user?.name }}</h4>
+        <p>{{ user?.email }}</p>
+        <p>{{ user?.id }}</p>
+      </div>
+    </div>
+    <div>User Data: {{user|json}}</div>
+
+  </div>
+</div>

@@ -1,0 +1,20 @@
+<div class="card" *ngIf="!user || user.provider =='MICROSOFT'">
+  <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR8u8BZcgcIxcfgSJsas_HDf2pfYTBlmo2q3g&usqp=CAU"
+    class="card-img-top" alt="Microsoft">
+  <div class="card-body">
+    <h5 class="card-title">Microsoft Login</h5>
+    <a href="#" class="btn btn-primary" *ngIf="!user" (click)="signIn()">Sign In</a>
+    <a href="#" class="btn btn-primary" *ngIf="user" (click)="signOut()">Sign Out</a>
+
+    <div *ngIf="loggedIn">
+      <img src="{{ user?.photoUrl }}">
+      <div>
+        <h4>{{ user?.name }}</h4>
+        <p>{{ user?.email }}</p>
+        <p>{{ user?.id }}</p>
+      </div>
+    </div>
+    <div>User Data: {{user|json}}</div>
+
+  </div>
+</div>
