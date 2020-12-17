@@ -14,7 +14,7 @@ Angular application (Ver. 11) in which the various social networks are logged in
 
 Authorization WebService developed with NodeJs and [** ExpressJs **] (https://expressjs.com/) with a login function that checks the access-token with the right provider and, if correct, generates a JWT token for the client for managing permissions;
 
-### Social
+## Social Developed
 
 - Google OAuth2
 - Azure OAuth2
