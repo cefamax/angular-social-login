@@ -16,6 +16,6 @@ Authorization WebService developed with NodeJs and [** ExpressJs **] (https://ex
 
 ## Social Developed
 
-- Google OAuth2
-- Azure OAuth2
+- [Google] (https://developers.google.com/adwords/api/docs/guides/authentication)
+- [Azure Active Directory] (https://docs.microsoft.com/it-it/azure/active-directory/develop/howto-create-service-principal-portal)
 
