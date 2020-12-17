@@ -18,3 +18,8 @@ export const environment = {
   REDIRECT_URI: 'http://localhost:4200/'
 };
 ```
+## Social Developed
+
+- [**Google**](https://developers.google.com/adwords/api/docs/guides/authentication)
+- [**Azure Active Directory**](https://docs.microsoft.com/it-it/azure/active-directory/develop/howto-create-service-principal-portal)
+
