@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 
 import { SocialAuthService, SocialUser, GoogleLoginProvider } from "angularx-social-login";
+import { AuthService } from '../auth.service';
 
 
 @Component({
@@ -13,7 +14,7 @@ export class GoogleAuthComponent implements OnInit {
   user: SocialUser | undefined;
   loggedIn: boolean = false;
 
-  constructor(private socialAuthService: SocialAuthService) { }
+  constructor(private socialAuthService: SocialAuthService, private authService: AuthService) { }
 
   ngOnInit() {
     //this.socialAuthService.refreshAuthToken(GoogleLoginProvider.PROVIDER_ID);
@@ -28,6 +29,16 @@ export class GoogleAuthComponent implements OnInit {
       .then((user: SocialUser) => {
         this.user = user;
         this.loggedIn = (user != null);
+
+        if (this.loggedIn) {
+          this.authService.authData(this.user).subscribe(res => {
+            this.authService.token = res.jwttoken;
+            console.log('token: ', this.authService.token);
+          }, err => {
+            console.error(err);
+          });
+        }
+
       });
   }
 

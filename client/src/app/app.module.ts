@@ -1,5 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import { HttpClientModule } from '@angular/common/http';
 import { SocialLoginModule, SocialAuthServiceConfig, GoogleLoginProvider, FacebookLoginProvider, MicrosoftLoginProvider } from 'angularx-social-login';
 
 import { AppComponent } from './app.component';
@@ -19,6 +20,7 @@ import { MicrosoftAuthComponent } from './microsoft-auth/microsoft-auth.componen
   imports: [
     BrowserModule,
     NgbModule,
+    HttpClientModule,
     SocialLoginModule
   ],
   providers: [{
@@ -39,7 +41,11 @@ import { MicrosoftAuthComponent } from './microsoft-auth/microsoft-auth.componen
         }, {
           id: MicrosoftLoginProvider.PROVIDER_ID,
           provider: new MicrosoftLoginProvider(
-            environment.MICROSOFT_CLIENT_ID
+            environment.MICROSOFT_CLIENT_ID,
+            {
+              redirect_uri: environment.REDIRECT_URI,
+              authority: environment.MICROSOFT_AUTHORITY
+            }
           )
         }
       ]
